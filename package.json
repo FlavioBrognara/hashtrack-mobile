@@ -2,6 +2,7 @@
   "name": "hashtrack-mobile",
   "version": "1.0.0",
   "description": "timesheet mais fácil que suas planilhas",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/kaic/hashtrack-mobile.git"
