@@ -40,5 +40,9 @@
     "nodemon": "^1.11.0",
     "style-loader": "^0.13.0",
     "uglify-js": "^2.7.5"
-  }
+  }, 
+  "engines": {
+        "node": "^",
+        "npm": "^"
+    } 
 }
