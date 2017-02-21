@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# 2017-02-21:v1
+
+# Explicitly cached 'master entries'.
+CACHE:
+index.html
+assets/css/style.css
+assets/fonts/
+assets/img/
+components/nav/nav.component.html
+day/views/
+ionicons/
+launcher/views/
+login/views/
+new-appointment/views/
+timer/views/
+welcome/views/
+manifest.json
+
+NETWORK:
+assets/js/

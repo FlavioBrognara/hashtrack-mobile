@@ -1,0 +1,151 @@
+// Import Google font
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+// Color list
+$color-red-deep: #d9534f;
+$color-gray: #d5d5d5;
+$facebook-color: #4E6BAD;
+$color-default-theme: #3acbc6;
+$color-text: #5F6C72;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+$font-hash: "Open Sans",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+// Additional variables
+// $fa-font-path: "font-awesome/fonts";
+// @import "font-awesome/scss/font-awesome";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "angular-material";
+@import "pe-icon-7-stroke/css/pe-icon-7-stroke";
+@import "form";
+@import "buttons";
+@import "util";
+@import "navs";
+// @import "animations";
+ng-view {
+  height: 100%;
+}
+
+.login-header {
+  margin: 0 auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  color: $color-default-theme;
+}
+
+.selectdemoSelectHeader .demo-header-searchbox {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+.selectdemoSelectHeader .demo-select-header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+  padding-left: 10.667px;
+  height: 48px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.selectdemoSelectHeader md-content._md {
+  max-height: 240px;
+}
+
+#durationLabel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.input-manual {
+  background-color: #fff!important;
+  width: 50px!important;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-bottom: 1px dotted #d5d5d5;
+  padding: 0 5px;
+  border-radius: 3px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0 5px;
+  text-align: center;
+  font-weight: 500;
+  transition: all .5s ease;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(50% - 10px)!important;
+  height: 32px;
+  line-height: 32px
+}
+
+.container-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.timer {
+  margin-top: 100px;
+  color: $color-default-theme;
+  font-size: 30px;
+}
+
+.timer h1 p {
+  display: inline;
+  font-size: 26px;
+}
+
+.icon {
+  margin-top: 19px;
+  margin-left: 16px;
+}
+
+.icon i {
+  font-size: 28px;
+}
+
+table {
+  margin-top: 10px;
+}
+
+table td {
+  padding: 5px;
+  margin-bottom: 5px;
+  height: 6vh;
+  line-height: 6vh;
+  color: $color-text;
+  font-size: 13px;
+}
+
+#activitie {
+  font-weight: bold;
+  color: $color-text;
+  font-size: 15px;
+}
+
+td {
+  float: left !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vertical-align h3 {
+  color: $color-text;
+}
+
+.no-margin {
+  margin: 18px 0 !important;
+}

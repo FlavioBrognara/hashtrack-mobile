@@ -1,0 +1,131 @@
+<div class="appointment-screen">
+    <div class="container">
+        <div class="row subnav">
+            <div class="col-xs-2">
+                <md-datepicker ng-model="app.appointment.dt"></md-datepicker>
+            </div>
+            <div class="col-xs-10">
+                <h5>Novo Apontamento: {{app.appointment.dt| date:'dd'}} de {{app.appointment.dt| date:'MMMM'}} {{app.mounth}}</h5>
+            </div>
+        </div>
+    </div>
+    <form ng-submit="app.startAppointment(app.appointment)">
+        <div class="container">
+            <div class="row">
+                <div class="icon col-xs-1">
+                    <i class="ion-ios-personadd-outline" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-10">
+                    <md-select ng-required="true" md-on-close="app.searchCustomer = ''" data-md-container-class="selectdemoSelectHeader" md-no-asterisk
+                        placeholder="Em qual cliente?" ng-model="app.customer" md-on-open="app.loadCustomers()">
+                        <md-select-header class="demo-select-header">
+                            <input ng-model="app.searchCustomer" type="search" placeholder="Procure em seus clientes" class="demo-header-searchbox md-text"
+                                ng-keydown="app.onSearchChange($event)">
+                        </md-select-header>
+                        <md-option ng-value="customer._id" ng-repeat="customer in app.customers | orderBy: 'customer.name'|
+              filter: app.searchCustomer">{{customer.name}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="icon col-xs-1">
+                    <i class="ion-ios-list-outline" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-10">
+                    <md-select ng-change="app.loadActivities(projectData)" required md-on-close="app.searchProject = ''" md-no-asterisk data-md-container-class="selectdemoSelectHeader"
+                        placeholder="Em qual projeto?" ng-model="projectData" md-on-open="app.loadProjects(app.customer)" ng-disabled="!app.customer">
+                        <md-select-header class="demo-select-header">
+                            <input ng-model="app.searchProject" type="search" placeholder="Procure em seus projetos" class="demo-header-searchbox md-text"
+                                ng-keydown="app.onSearchChange($event)">
+                        </md-select-header>
+                        <md-option ng-value="project" ng-repeat="project in app.projects | orderBy: 'project.name' |
+              filter: app.searchProject">{{project.name}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="icon col-xs-1">
+                    <i class="ion-ios-compose-outline" aria-hidden="true"></i>
+                </div>
+                <div ng-if="app.showSelect" class="col-xs-10">
+                    <md-select required md-on-close="app.searchProject = ''" md-no-asterisk data-md-container-class="selectdemoSelectHeader"
+                        placeholder="O que está fazendo?" ng-model="app.appointment.activitie" ng-disabled="!projectData">
+                        <md-select-header class="demo-select-header">
+                            <input ng-model="app.searchActivitie" type="search" placeholder="Procure em suas atividades" class="demo-header-searchbox md-text"
+                                ng-keydown="app.onSearchChange($event)">
+                        </md-select-header>
+                        <md-option ng-value="activitie" ng-repeat="activitie in app.activities| orderBy: 'activitie' |
+              filter: app.searchActivitie">{{activitie.name}}</md-option>
+                    </md-select>
+                </div>
+                <div ng-if="app.showInput" class="col-xs-10">
+                    <md-input-container md-no-float class="no-margin">
+                        <input required placeholder="O que está fazendo?" type="text" ng-model="app.appointment.activitie" ng-disabled="!projectData">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="icon col-xs-1">
+                    <i class="ion-ios-chatbubble-outline" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-10">
+                    <md-input-container md-no-float>
+                        <input type="text" ng-model="appointment.note" placeholder="Adicione anotações sobre esse apontamento (opcional)" ng-disabled="!app.appointment.project">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <button class="btn btn-default btn-block" ng-if="app.loadButtons(app.appointment.dt)" type="submit" name="button"><i class="fa fa-circle-o-notch fa-spin fa-fw" ng-if="app.iconTimer"></i> Iniciar Timer</button>
+        </div>
+    </form>
+    <div id="durationLabel" class="text-center"> <span> ou adicionar duração </span> </div>
+    <div ng-if="app.$storage.trackOption.time">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-6">
+                    <label> Início </label>
+                </div>
+                <div class="col-xs-6">
+                    <label> Fim </label>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <input class="input-manual" ng-model="app.appointment.start" ui-time-mask="short" placeholder="--:--" type="tel">
+                    <input class="input-manual" ng-model="app.appointment.stop" ui-time-mask="short" placeholder="--:--" type="tel">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="app.$storage.trackOption.duration">
+        <div class="container">
+            <div class="row">
+                <div class="box-duracao col-xs-10 col-xs-offset-1">
+                    <input type="number" class="input-manual col-xs-2" ng-model="app.appointment.hours" type="number" placeholder="0">
+                    <label class="col-xs-2 label-input-manual"> horas</label>
+                    <input type="number" class="input-manual col-xs-2" ng-model="app.appointment.minutes" type="number" placeholder="0">
+                    <label class="col-xs-2 label-input-manual"> minutos</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="btn-save" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-default btn-block" type="submit" name="button" ng-click="app.saveAppointment(app.appointment)"><i class="fa fa-circle-o-notch fa-spin fa-fw" ng-if="app.iconSave"></i> Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<md-button class="md-fab" aria-label="Voltar" ng-href="/day">
+    <md-icon md-font-icon="ion-ios-arrow-back" class="ion-ios-arrow-back" ng-style="{color: 'white', 'font-size':'30px', height:'30px'}">
+</md-button>

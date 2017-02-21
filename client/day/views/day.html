@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row subnav text-center">
+        <h4>Meus Apontamentos de Hoje</h4>
+    </div>
+    <div ng-if="day.timer" class="row subnav-timer text-center" ng-click="day.timerPath()">
+        <div chrono-timer timer-name="myTimer" start-time="day.time">
+            <h5>Apontamento em andamento: {{hours|zeropad}}:{{minutes|zeropad}}:{{seconds|zeropad}}
+            </h5>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table>
+                <tr ng-repeat="appointment in day.appointments" ng-click="day.openModal(appointment)">
+                    <td class="col-xs-5" id="activitie">{{appointment.task_description.name || appointment.task_description}}</td>
+                    <td class="col-xs-4">{{appointment.project.name}}</td>
+                    <td class="col-xs-3">{{appointment.inHours}}h</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div ng-if="day.showMessage" class="vertical-align">
+    <div class="container text-center">
+        <h3>Você ainda não apontamentou hoje.</h3>
+    </div>
+</div>
+<md-button class="{{day.fabClass}}" aria-label="Novo Apontamento" ng-click="day[!$storage.hasTimer ? 'appointmentPath' : 'timerPath']()">
+    <md-icon md-font-icon="{{day.icon}}" class="{{day.icon}}" ng-style="{color: 'white', 'font-size':'30px', height:'30px'}">
+</md-button>

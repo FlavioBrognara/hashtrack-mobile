@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <h2 class="login-header text-center">Bem vindo!</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <form ng-submit="login.login()">
+                <md-input-container>
+                    <label>E-mail</label>
+                    <input required id="email" type="email" ng-model="login.user.login" />
+                </md-input-container>
+                <md-input-container>
+                    <label>Senha</label>
+                    <input required id="pass" type="password" ng-model="login.user.password" />
+                </md-input-container>
+                <md-input-container>
+                    <button type="submit" class="btn btn-block btn-login"><i class="fa fa-circle-o-notch fa-spin fa-fw" ng-if="login.loadIcon"></i> Entrar na sua conta</button>
+                </md-input-container>
+        </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <a href="https://app.hashtrack.io/#/password/forgot" target="_blank">Esqueci minha senha</a>
+                <br> Você não tem uma conta? <a href="https://hashtrack.io/signup" target="_blank">Cadastre-se grátis</a>
+            </div>
+        </div>
+    </div>
+</div>

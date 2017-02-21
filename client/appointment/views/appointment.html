@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row subnav text-center">
+        <h5>Editar Apontamento</h5>
+    </div>
+</div>
+<form ng-submit="app.startAppointment(app.appointment)">
+<div class="container">
+    <div class="row">
+        <div class="icon col-xs-1">
+            <i class="ion-ios-personadd-outline" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-10">
+            <md-select ng-required="true" md-on-close="app.searchCustomer = ''" data-md-container-class="selectdemoSelectHeader" md-no-asterisk
+                placeholder="Em qual cliente?" ng-model="app.customer" md-on-open="app.loadCustomers()">
+                <md-select-header class="demo-select-header">
+                    <input ng-model="app.searchCustomer" type="search" placeholder="Procure em seus clientes" class="demo-header-searchbox md-text"
+                        ng-keydown="app.onSearchChange($event)">
+                </md-select-header>
+                <md-option ng-value="customer._id" ng-repeat="customer in app.customers | orderBy: 'customer.name'|
+              filter: app.searchCustomer">{{customer.name}}</md-option>
+                    </md-select>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="icon col-xs-1">
+            <i class="ion-ios-list-outline" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-10">
+            <md-select required md-on-close="app.searchProject = ''" md-no-asterisk data-md-container-class="selectdemoSelectHeader"
+                placeholder="Em qual projeto?" ng-model="projectData" md-on-open="app.loadProjects(app.customer)" ng-disabled="!app.customer">
+                <md-select-header class="demo-select-header">
+                    <input ng-model="app.searchProject" type="search" placeholder="Procure em seus projetos" class="demo-header-searchbox md-text"
+                        ng-keydown="app.onSearchChange($event)">
+                </md-select-header>
+                <md-option ng-value="project" ng-repeat="project in app.projects | orderBy: 'project.name' |
+              filter: app.searchProject">{{project.name}}</md-option>
+                    </md-select>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="icon col-xs-1">
+            <i class="ion-ios-compose-outline" aria-hidden="true"></i>
+        </div>
+        <div ng-if="app.showSelect" class="col-xs-10">
+            <md-select required md-on-close="app.searchProject = ''" md-no-asterisk md-on-open="app.loadActivities(projectData)" data-md-container-class="selectdemoSelectHeader"
+                placeholder="O que está fazendo?" ng-model="app.appointment.activitie" ng-disabled="!app.appointment.project">
+                <md-select-header class="demo-select-header">
+                    <input ng-model="app.searchActivitie" type="search" placeholder="Procure em suas atividades" class="demo-header-searchbox md-text"
+                        ng-keydown="app.onSearchChange($event)">
+                </md-select-header>
+                <md-option ng-value="activitie" ng-repeat="activitie in app.activities| orderBy: 'activitie' |
+              filter: app.searchActivitie">{{activitie.name}}</md-option>
+                    </md-select>
+        </div>
+        <div ng-if="app.showInput" class="col-xs-10">
+            <md-input-container md-no-float>
+                <input required placeholder="O que está fazendo?" type="text" ng-model="app.appointment.activitie" ng-disabled="!app.appointment.project">
+            </md-input-container>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="icon col-xs-1">
+            <i class="ion-ios-chatbubble-outline" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-10">
+            <md-input-container md-no-float>
+                <input type="text" ng-model="appointment.note" placeholder="Adicione anotações sobre esse apontamento (opcional)" ng-disabled="!app.appointment.project">
+            </md-input-container>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button class="btn btn-default btn-block" type="submit" name="button">Salvar Alterações</button>
+</div>
+</form>

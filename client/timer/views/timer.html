@@ -1,0 +1,22 @@
+<div class="row text-center timer">
+    <div class="col-xs-12">
+        <div chrono-timer timer-name="myTimer" start-time="time">
+            <h1>{{hours|zeropad}}:{{minutes|zeropad}}<p>:{{seconds|zeropad}}</p></h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+</div>
+<div class="container">
+    <div class="row">
+        <h4 class="text-center">{{$storage.activitie.name || $storage.activitie}} em {{project}}</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row text-center">
+        <button ng-click="stopAppointment()" class="btn btn-stop"><i class="fa fa-circle-o-notch fa-spin fa-fw" ng-if="timer.icon"></i> Parar</button>
+    </div>
+</div>
+<md-button class="md-fab" aria-label="Voltar" ng-href="/day">
+    <md-icon md-font-icon="ion-ios-arrow-back" class="ion-ios-arrow-back" ng-style="{color: 'white', 'font-size':'30px', height:'30px'}">
+</md-button>

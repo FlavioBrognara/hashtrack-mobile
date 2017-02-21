@@ -1,0 +1,108 @@
+button:focus,
+button:active {
+    outline: 0 !important;
+}
+
+.btn-link {
+  color: white;
+}
+
+.btn-link i {
+  font-size: 20px;
+}
+
+
+.btns-modal-appointment .btn-default {
+    height: 40px;
+}
+
+.btn-login {
+    background-color: $color-default-theme;
+    color: white;
+    font-size: 16px;
+    margin: 0 auto;
+    height: 45px;
+}
+
+.btn-login:focus,
+.btn-login:active,
+.btn-login:hover {
+    background-color: white;
+    color: $color-default-theme;
+    border: 2px solid;
+    border-color: $color-default-theme;
+}
+
+a {
+    color: $color-default-theme;
+}
+
+.btn-default {
+    height: 50px;
+    background-color: $color-default-theme;
+    border-radius: 0px;
+    color: white;
+    font-size: 23px;
+}
+
+.btn-default:focus,
+.btn-default:active,
+.btn-default:hover {
+    background-color: white;
+    color: $color-default-theme;
+    border: 2px solid;
+    border-color: $color-default-theme;
+}
+
+#btn-save {
+    margin-top: 20px;
+}
+
+.btn-stop {
+    margin-top: 25px;
+    color: #fff;
+    background-color: $color-red-deep;
+    border-color: $color-red-deep;
+    height: 70px;
+    width: calc(90% - 10px);
+    font-size: 25px;
+    text-transform: uppercase;
+    border-radius: 0px;
+}
+
+.btn-stop:focus,
+.btn-stop:active,
+.btn-stop:hover {
+    background-color: white;
+    color: $color-red-deep;
+    border: 2px solid;
+    border-color: $color-red-deep;
+}
+
+.md-button.md-fab {
+    background-color: $color-default-theme;
+    line-height: 4.5rem;
+    min-width: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+}
+
+.md-fab {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.fab-timer {
+    background-color: $color-red-deep !important;
+}
+
+.md-button.md-fab:not([disabled]):hover {
+    background-color: #2C9E9A;
+}
+
+.fab-timer:hover {
+    background-color: #A33527 !important;
+}

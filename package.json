@@ -1,0 +1,44 @@
+{
+  "name": "hashtrack-mobile",
+  "version": "1.0.0",
+  "description": "timesheet mais fácil que suas planilhas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaic/hashtrack-mobile.git"
+  },
+  "scripts": {
+   "build": "browserify client/app.js | uglifyjs > client/assets/js/bundle.min.js && node-sass --include-path scss client/assets/scss/style.scss client/assets/css/style.css --importer node_modules/node-sass-import",
+    "dev": "nodemon -e scss,css,js --ignore client/assets/css --ignore client/assets/js --exec 'npm run build'",
+    "start": "nodemon ./server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "angular": "1.6.2",
+    "angular-animate": "1.6.2",
+    "angular-aria": "1.6.2",
+    "angular-bootstrap": "^0.12.2",
+    "angular-input-masks": "^2.5.0",
+    "angular-material": "^1.1.1",
+    "angular-messages": "1.6.2",
+    "angular-moment": "^1.0.1",
+    "angular-route": "1.6.2",
+    "angular-sanitize": "1.6.2",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "ionicons": "^3.0.0",
+    "jquery": "^3.1.1",
+    "moment": "^2.17.1",
+    "ngstorage": "^0.3.11",
+    "node-sass-import": "^1.1.1"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "browserify-shim": "^3.8.13",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "style-loader": "^0.13.0",
+    "uglify-js": "^2.7.5"
+  }
+}
