@@ -1,6 +1,11 @@
-var http = require('http');
-var app = require('./config/express')
+var express = require('express');
+var app = express();
 
-http.createServer(app).listen(3000, function() {
-	console.log('Http Server Running: '+'http://localhost:'+this.address().port);
+app.set('port', process.env.PORT || 3000);
+
+app.use(express.logger('dev'));
+app.use(express.compress());
+app.use(express.static(__dirname + '/client'));////
+
+app.listen(app.get('port'), function() {
 });
