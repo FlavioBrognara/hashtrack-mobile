@@ -9,7 +9,7 @@
   "scripts": {
    "build": "browserify client/app.js | uglifyjs > client/assets/js/bundle.min.js && node-sass --include-path scss client/assets/scss/style.scss client/assets/css/style.css --importer node_modules/node-sass-import",
     "dev": "nodemon -e scss,css,js --ignore client/assets/css --ignore client/assets/js --exec 'npm run build'",
-    "start": "server.js"
+    "start": "npm run build | node server.js"
   },
   "author": "",
   "license": "ISC",
