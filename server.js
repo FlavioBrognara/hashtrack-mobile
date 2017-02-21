@@ -5,6 +5,6 @@ app.set('port', process.env.PORT || 8000);
 
 app.use(express.logger('dev'));
 app.use(express.compress());
-app.use(express.static(__dirname + '/client'));
+app.use(express.static('./client'));
 
 app.listen(app.get('port'), function () {});
