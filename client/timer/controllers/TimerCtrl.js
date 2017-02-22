@@ -76,7 +76,7 @@ function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chrono
         }
         $http.put(URL + 'appointments-extension/' + $localStorage.apId, dataObj).then(function (response) {
             mixpanel.track("Parou um Timer");
-            $location.path('/appointment');
+            $location.path('/day');
             vm.icon = false;
         }).catch(function (err) {
             console.error(err)
