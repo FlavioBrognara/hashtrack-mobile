@@ -33,6 +33,11 @@ ng-view {
 .login-header {
   margin: 0 auto;
   margin-top: 10vh;
+  color: $color-default-theme;
+}
+
+.legenda-header {
+  margin: 0 auto;
   margin-bottom: 10vh;
   color: $color-default-theme;
 }

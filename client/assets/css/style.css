@@ -31347,6 +31347,10 @@ ng-view {
 .login-header {
   margin: 0 auto;
   margin-top: 10vh;
+  color: #3acbc6; }
+
+.legenda-header {
+  margin: 0 auto;
   margin-bottom: 10vh;
   color: #3acbc6; }
 
