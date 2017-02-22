@@ -9,7 +9,6 @@ assets/fonts/
 assets/img/
 components/nav/nav.component.html
 day/views/
-ionicons/
 launcher/views/
 login/views/
 new-appointment/views/
