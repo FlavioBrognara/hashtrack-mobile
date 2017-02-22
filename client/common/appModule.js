@@ -1,6 +1,6 @@
 module.exports = angular.module('hashtrackApp', ['ngRoute', 'ngStorage', 'ngSanitize', 'ngMaterial', 'RunningAppointmentService', 'ui.utils.masks', 'angular-chrono', 'angularMoment', 'ui.bootstrap'])
 
-    .config(function ($routeProvider, $httpProvider, $locationProvider) {
+    .config(function ($routeProvider, $httpProvider) {
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
