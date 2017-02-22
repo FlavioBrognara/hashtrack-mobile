@@ -15,10 +15,6 @@ function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chrono
         $location.path("/login");
     }
 
-    vm.dayPath = function (){
-        $location.path("/day");
-    }
-
     $http.get(URL + 'extension-last/').then(function (response) {
         if (!response.data) {
             $location.path("/day");
@@ -26,10 +22,15 @@ function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chrono
     }).catch(function (err) {
         console.error(err)
     });
+    
+    vm.dayPath = function () {
+        $location.path("/day");
+    }
 
-    $localStorage.previous = true
 
-    $localStorage.hasTimer = true
+    $localStorage.previous = true;
+
+    $localStorage.hasTimer = true;
 
     var URL = urlConfig.URL;
     $scope.$storage = $localStorage;
