@@ -48,12 +48,13 @@ function DayCtrl(urlConfig, $http, moment, $localStorage, chronoService, $locati
         vm.path = "timerPath"
     }
 
-    vm.timerPath = function () {
-        $location.path('/timer');
-    }
+    vm.path = function () {
+        if ($localStorage.hasTimer) {
+            $location.path('/timer');
+        } else {
+            $location.path('/appointment');
 
-    vm.appointmentPath = function () {
-        $location.path('/appointment');
+        }
     }
 
     getTodayAppointments();

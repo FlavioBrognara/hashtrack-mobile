@@ -27,6 +27,6 @@
         <h3>Você ainda não apontamentou hoje.</h3>
     </div>
 </div>
-<md-button class="{{day.fabClass}}" aria-label="Novo Apontamento" ng-click="day[!$storage.hasTimer ? 'appointmentPath' : 'timerPath']()">
+<md-button class="{{day.fabClass}}" aria-label="Novo Apontamento" ng-click="day.path()">
     <md-icon md-font-icon="{{day.icon}}" class="{{day.icon}}" ng-style="{color: 'white', 'font-size':'30px', height:'30px'}">
 </md-button>
