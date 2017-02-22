@@ -3,6 +3,7 @@ app.controller('TimerCtrl', TimerCtrl);
 TimerCtrl.$inject = ['$http', '$localStorage', '$httpParamSerializer', '$location', 'chronoService', '$scope', 'urlConfig'];
 
 function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chronoService, $scope, urlConfig) {
+    var URL = urlConfig.URL;
     vm = this;
     vm.icon = false;
     vm.logout = function () {
@@ -21,7 +22,6 @@ function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chrono
     $http.get(URL + 'extension-last/').then(function (response) {
         if (!response.data) {
             $location.path("/day");
-
         }
     }).catch(function (err) {
         console.error(err)
@@ -76,6 +76,7 @@ function TimerCtrl($http, $localStorage, $httpParamSerializer, $location, chrono
         }
         $http.put(URL + 'appointments-extension/' + $localStorage.apId, dataObj).then(function (response) {
             mixpanel.track("Parou um Timer");
+            $localStorage.hasTimer = false;
             $location.path('/day');
             vm.icon = false;
         }).catch(function (err) {
