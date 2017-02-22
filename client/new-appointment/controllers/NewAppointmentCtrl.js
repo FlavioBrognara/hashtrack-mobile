@@ -25,6 +25,10 @@ function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $locatio
         $location.path("/login");
     }
 
+    vm.dayPath = function (){
+        $location.path("/day");
+    }
+
     $http.get(URL + 'extension-last/').then(function (response) {
         if (response.data) {
             $localStorage.appointment = response.data;
