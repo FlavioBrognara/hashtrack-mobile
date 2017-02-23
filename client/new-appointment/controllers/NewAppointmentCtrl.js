@@ -25,7 +25,7 @@ function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $locatio
         $location.path("/login");
     }
 
-    vm.dayPath = function (){
+    vm.dayPath = function () {
         $location.path("/day");
     }
 
@@ -183,16 +183,23 @@ function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $locatio
                 vm.showErrorNotification('Preencha todos os campos para salvar');
                 return;
             }
-            var startDate = new Date(appointment.dt.toJSON().slice(0, 10) + ' ' + appointment.start);
-            var stopDate = new Date(appointment.dt.toJSON().slice(0, 10) + ' ' + appointment.stop);
+            var start = new Date();
+            var stop = null;
+            var hourStart = vm.start_hour.slice(0, 2);
+            var minuteStart = vm.start_hour.slice(3);
+            var hourStop = vm.stop_hour.slice(0, 2);
+            var minuteStop = vm.stop_hour.slice(3);
+
+            start = new Date(moment(vm.selectedDate.toJSON().slice(0, 10)).hours(hourStart).minutes(minuteStart));
+            stop = new Date(moment(vm.selectedDate.toJSON().slice(0, 10)).hours(hourStop).minutes(minuteStop));
             var dataObj = {
                 user: $localStorage.user._id,
                 project: appointment.project,
                 task_description: appointment.activitie,
                 note: appointment.note,
                 source: 'manual',
-                start: startDate,
-                stop: stopDate,
+                start: start,
+                stop: stop,
                 customer: appointment.project.customer,
                 day: appointment.dt
             }
