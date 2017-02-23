@@ -185,13 +185,13 @@ function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $locatio
             }
             var start = new Date();
             var stop = null;
-            var hourStart = vm.start_hour.slice(0, 2);
-            var minuteStart = vm.start_hour.slice(3);
-            var hourStop = vm.stop_hour.slice(0, 2);
-            var minuteStop = vm.stop_hour.slice(3);
+            var hourStart = appointment.start.slice(0, 2);
+            var minuteStart = appointment.start.slice(3);
+            var hourStop = appointment.stop.slice(0, 2);
+            var minuteStop = appointment.stop.slice(3);
 
-            start = new Date(moment(vm.selectedDate.toJSON().slice(0, 10)).hours(hourStart).minutes(minuteStart));
-            stop = new Date(moment(vm.selectedDate.toJSON().slice(0, 10)).hours(hourStop).minutes(minuteStop));
+            start = new Date(moment(appointment.dt.toJSON().slice(0, 10)).hours(hourStart).minutes(minuteStart));
+            stop = new Date(moment(appointment.dt.toJSON().slice(0, 10)).hours(hourStop).minutes(minuteStop));
             var dataObj = {
                 user: $localStorage.user._id,
                 project: appointment.project,
