@@ -3,6 +3,9 @@ var https = require('https');
 var fs = require('fs');
 var app = express();
 
+var port = process.env.PORT || 8080;
+
+
 app.use(express.static('./client'));
 
 var options = {
@@ -12,6 +15,6 @@ var options = {
 
 };
 
-https.createServer(options, app).listen(8000, function () {
+https.createServer(options, app).listen(port, function () {
     console.log('HTTPS Server http://localhost:8000');
 });
