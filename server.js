@@ -1,5 +1,6 @@
 var express = require('express');
 var https = require('https');
+var fs = require('fs');
 var app = express();
 
 app.use(express.static('./client'));
