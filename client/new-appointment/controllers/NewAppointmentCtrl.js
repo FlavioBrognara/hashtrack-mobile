@@ -1,8 +1,8 @@
 var app = require('../../common/appModule');
 app.controller('NewAppointmentCtrl', NewAppointmentCtrl);
-NewAppointmentCtrl.$inject = ['$http', '$localStorage', '$httpParamSerializer', '$location', '$mdToast', "$mdDialog"];
+NewAppointmentCtrl.$inject = ['$http', '$localStorage', '$httpParamSerializer', '$location', '$mdToast', "$mdDialog", "moment"];
 
-function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $location, $mdToast, $mdDialog) {
+function NewAppointmentCtrl($http, $localStorage, $httpParamSerializer, $location, $mdToast, $mdDialog, moment) {
     var vm = this;
     vm.searchTerm;
     vm.$storage = $localStorage;
