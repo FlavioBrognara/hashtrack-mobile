@@ -130,13 +130,19 @@ table td {
   margin-bottom: 5px;
   height: 6vh;
   line-height: 6vh;
-  color: $color-text;
+  color: #fff;
   font-size: 13px;
+}
+
+.tabela-apontamento {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #3acbc6 !important;
 }
 
 #activitie {
   font-weight: bold;
-  color: $color-text;
+  color: #fff;
   font-size: 15px;
 }
 

@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <table>
+            <table class="tabela-apontamento">
                 <tr ng-repeat="appointment in day.appointments" ng-click="day.openModal(appointment)">
                     <td class="col-xs-5" id="activitie">{{appointment.task_description.name || appointment.task_description}}</td>
                     <td class="col-xs-4">{{appointment.project.name}}</td>

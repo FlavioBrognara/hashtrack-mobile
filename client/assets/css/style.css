@@ -7572,8 +7572,7 @@ md-calendar-month .md-calendar-month-label:not(.md-calendar-month-label-disabled
 
 .md-calendar-day-header {
   table-layout: fixed;
-  border-spacing: 0;
-  border-collapse: collapse; }
+  border-spacing: 0; }
 
 .md-calendar-day-header th {
   height: 40px;
@@ -31334,8 +31333,8 @@ a {
   font-size: 15px; }
 
 .subnav {
-  background-color: #e0e4e6;
-  color: #5F6C72; }
+  background-color: #00bbb5;
+  color: #fff; }
 
 .subnav-timer {
   background-color: #d9534f;
@@ -31431,12 +31430,17 @@ table td {
   margin-bottom: 5px;
   height: 6vh;
   line-height: 6vh;
-  color: #5F6C72;
+  color: #fff;
   font-size: 13px; }
+
+.tabela-apontamento {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #3acbc6 !important; }
 
 #activitie {
   font-weight: bold;
-  color: #5F6C72;
+  color: #fff;
   font-size: 15px; }
 
 td {
