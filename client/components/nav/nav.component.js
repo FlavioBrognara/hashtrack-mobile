@@ -4,27 +4,28 @@ app.component('navbar', {
 
     controller: function ($location, $localStorage, $scope, $mdDialog, $rootScope) {
         var vm = this;
-        vm.showLogout = true;
+        vm.showNav = true;
+        
+        if ($location.path() == "/login") vm.showNav = false;
 
-    
         $scope.$on('$locationChangeStart', function (event, next, current) {
             vm.showNav = true;
-            if (next.split('#!').pop() == '/login') vm.showNav = false;  
+            if (next.split('#!').pop() == '/login') vm.showNav = false;
         });
 
 
         vm.logout = function () {
 
-        var confirm = $mdDialog.confirm()
-           .title('Deseja sair?')
-           .ok('Sair')
-           .cancel('Cancelar');
+            var confirm = $mdDialog.confirm()
+                .title('Deseja sair?')
+                .ok('Sair')
+                .cancel('Cancelar');
 
-            $mdDialog.show(confirm).then(function() {
-             $location.path("login");
-             $localStorage.$reset();
-            }, function() {
-            console.log("logout cancelado");
+            $mdDialog.show(confirm).then(function () {
+                $location.path("login");
+                $localStorage.$reset();
+            }, function () {
+                console.log("logout cancelado");
             });
         }
     },

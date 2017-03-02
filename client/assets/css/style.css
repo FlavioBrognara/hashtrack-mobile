@@ -31454,3 +31454,7 @@ td {
 
 .no-margin {
   margin: 18px 0 !important; }
+
+.logo-login {
+  width: 250px;
+  padding-bottom: 50px; }
