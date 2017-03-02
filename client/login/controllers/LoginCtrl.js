@@ -2,6 +2,7 @@ var app = require('../../common/appModule');
 app.controller('LoginCtrl', LoginCtrl);
 LoginCtrl.$inject = ['LoginService', '$localStorage', 'UserService', '$http', '$location', 'urlConfig', '$mdToast']
 
+
 function LoginCtrl(LoginService, $localStorage, UserService, $http, $location, urlConfig, $mdToast) {
     var vm = this;
     var URL = urlConfig.URL;
